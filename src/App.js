@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import Navigation from "./components/Navigation";
+import Maxcountgame from './components/Maxcountgame';
+import Clock from './components/Clock';
+import Stopwatch from './components/Stopwatch';
+import Messagefeed from './components/Messagefeed'
+import Reactiontimegame from './components/Reactiontimegame'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='overscroll-none select-none'>
+    <Navigation />
+    <Routes>
+      <Route path="/" element={<Maxcountgame />} />
+      <Route path="/Clock" element={<Clock />} />
+      <Route path="/Stopwatch" element={<Stopwatch />} />
+      <Route path="/Messagefeed" element={<Messagefeed />} />
+      <Route path="/Reactiontimegame" element={<Reactiontimegame />} />
+    </Routes>
+  </div>
   );
 }
 
